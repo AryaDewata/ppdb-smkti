@@ -249,17 +249,18 @@
 }
 @media (max-width: 540px) {
   * > body > header {
-    padding: 48px 28px 184px;
+    position: relative;
+    padding: 48px 28px 248px;
     min-height: 100vh;
     height: max-content;
+    overflow: hidden;
     flex-direction: column;
     gap: 28px;
   }
   * > body > header > svg {
-    position: absolute;
-    top: -45%;
-    left: -65%;
-    width: 185%;
+    top: -100%;
+    left: -200%;
+    width: 400%;
   }
   * > body > header > .header-text {
     width: 100%;
@@ -312,7 +313,7 @@
     color: #f2dd42;
   }
   * > body > header > #banner {
-    bottom: -60%;
+    bottom: -2.5%;
     width: 80%;
     padding: 8px 28px;
     transition: 800ms;
