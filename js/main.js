@@ -48,3 +48,8 @@ window.addEventListener("scroll", () => {
   if (document.documentElement.scrollTop > 200) nav.classList.add("nav--alt");
   else nav.classList.remove("nav--alt");
 });
+
+const navigationToggleButton = document.getElementById("nav-toggle-btn");
+navigationToggleButton.addEventListener("click", () => {
+  document.getElementsByTagName("nav")[0].classList.toggle("active");
+});
