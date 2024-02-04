@@ -250,10 +250,9 @@
 @media (max-width: 540px) {
   * > body > header {
     position: relative;
-    padding: 48px 28px 248px;
-    min-height: 100vh;
+    padding: 48px 28px 274px;
     height: max-content;
-    overflow: hidden;
+    overflow-x: hidden;
     flex-direction: column;
     gap: 28px;
   }
