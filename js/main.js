@@ -8,12 +8,14 @@ window.onscroll = function () {
 function backgroundNavbar() {
   if (document.documentElement.scrollTop < 100) {
     nav.style.background = "none";
+    nav.style.backdropFilter = "none";
     nav.style.boxShadow = "none";
     navLink.forEach((e) => (e.style.color = "white"));
   } else {
-    nav.style.background = "white";
-    nav.style.boxShadow = "0.5px 0.5px 3px grey";
-    navLink.forEach((e) => (e.style.color = "#7d7d7d"));
+    nav.style.background = "rgba(255, 255, 255, 0.8)";
+    nav.style.backdropFilter = "blur(2px)";
+    nav.style.boxShadow = "0.1px 0.5px 8px rgba(0, 0, 0, 0.1)";
+    navLink.forEach((e) => (e.style.color = "#8d8d8d"));
   }
 }
 
