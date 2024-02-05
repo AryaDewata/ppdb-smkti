@@ -1,28 +1,26 @@
+// Navigation
 const nav = document.querySelector("nav");
 const navLink = document.querySelectorAll("nav ul li a");
-
 const navigationToggleButton = document.getElementById("nav-toggle-btn");
-navigationToggleButton.addEventListener("click", () => {
+navigationToggleButton.addEventListener("click", function () {
   document.getElementsByTagName("nav")[0].classList.toggle("active");
+  this.childNodes[0].classList.toggle("fa-list");
+  this.childNodes[0].classList.toggle("fa-close");
 });
-
-window.onscroll = function () {
-  backgroundNavbar();
-};
 
 function backgroundNavbar() {
   if (document.documentElement.scrollTop < 100) {
+    nav.style.padding = "28px 84px";
     nav.style.background = "none";
     nav.style.backdropFilter = "none";
     nav.style.boxShadow = "none";
     navLink.forEach((e) => (e.style.color = "white"));
-    navigationToggleButton.style.color = "white";
   } else {
+    nav.style.padding = "14px 84px";
     nav.style.background = "rgba(255, 255, 255, 0.8)";
     nav.style.backdropFilter = "blur(2px)";
     nav.style.boxShadow = "0.1px 0.5px 8px rgba(0, 0, 0, 0.1)";
     navLink.forEach((e) => (e.style.color = "#8d8d8d"));
-    navigationToggleButton.style.color = "#40a2d8";
   }
 }
 
@@ -51,6 +49,7 @@ const handleScrollAnimation = () => {
   });
 };
 window.addEventListener("scroll", () => {
+  backgroundNavbar();
   handleScrollAnimation();
   if (document.documentElement.scrollTop > 200) nav.classList.add("nav--alt");
   else nav.classList.remove("nav--alt");
